@@ -23,7 +23,15 @@ function wordSplit(wordArray, choice){
     wordSet(letters);
 }
 
-function wordSet(here) {
-    console.log(here);
-}
+// This should set up three paragraphs with underlines.
+function wordSet(letters) {
+    var paraDiv = document.getElementById("word");
+    letters.forEach(letter => {
+        var wordPar = document.createElement("p");
+        wordPar.textContent = "_ ";
+        wordPar.classList.add("word_class");
+        console.log(wordPar);
+        paraDiv.appendChild(wordPar);
+});
+};
 // Next, letters will be used to build the necessary underlined spaces.
