@@ -21,7 +21,8 @@ function wordSplit(wordArray, choice){
     var beginWord = wordArray[choice];
     var letters = beginWord.split("");
     wordSet(letters);
-    return letters;
+    wordCheck(letters);
+    // console.log(letters);
 }
 
 // This should set up three paragraphs with underlines, add underlines, and set class.
@@ -35,7 +36,7 @@ function wordSet(letters) {
         wordPar.classList.add("word_class");
         wordPar.setAttribute("id", "letter" + i);
         paraDiv.appendChild(wordPar);
-        console.log(wordPar);
+        // console.log(letters);
 };
 };
 
@@ -43,12 +44,12 @@ function wordSet(letters) {
 
 function wordCheck(letters) {
     document.addEventListener("keydown", function() {
+        console.log(letters);
         var pressedKey;
         pressedKey = event.key;
-        console.log(pressedKey);
-        console.log(event.key);
         for(i=0; i < letters.length; i++) {
             if(pressedKey === letters[i]){
+                // console.log(letters);
                 document.getElementById("letter" + i).textContent = pressedKey;
             }
         }
