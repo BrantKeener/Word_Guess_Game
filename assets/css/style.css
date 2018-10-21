@@ -3,6 +3,12 @@ body {
     font-size: 16px;
 }
 
+.background {
+    background-image: url("/assets/images/Surgical_Suite.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
 #word {
     display: inline;
 }

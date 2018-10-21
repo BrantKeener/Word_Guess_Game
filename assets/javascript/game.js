@@ -15,12 +15,30 @@ let chosenWord = "";
 let guessedWord = "";
 let chances = 6;
 
-// This section deals the word setting, and the word evaluating.
-// I added all of the array switching stuff because I don't like when a random generator generates the same word over and over.
+// This section handles start button click.
 
 document.getElementById("start").addEventListener("click", function() {
     roundStart();
 });
+
+// This handles keypress and also limits keypresses to alpha characters only
+
+document.addEventListener("keydown", function() {
+    console.log(event.keyCode);
+    if(event.keyCode >= 65 && event.keyCode <= 90) {
+        wordCheck(event.key.toLowerCase());
+        winCheck();
+        guessRemaining();
+    };
+    if(event.keyCode === 16 || event.keyCode === 20) {
+        alert("Don't touch that!");
+    }
+});
+
+
+
+// This section deals the word setting, and the word evaluating.
+// I added all of the array switching stuff because I don't like when a random generator generates the same word over and over.
 
 function roundStart(){
     guessedWord = "";
@@ -59,13 +77,6 @@ function wordSet(creativeWord) {
         setDiv.appendChild(setPar);
 };
 };
-
-document.addEventListener("keydown", function() {
-    wordCheck(event.key.toLowerCase());
-    winCheck();
-    guessRemaining();
-});
-
 
 function wordCheck(key) {
     for(let i=0; i < letters.length; i++) {
