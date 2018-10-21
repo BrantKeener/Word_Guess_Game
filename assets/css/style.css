@@ -4,6 +4,7 @@ html {
     --title_color: #2db300;
     --background_pane: black;
     --opacity_pane: .75;
+    --content_color: white;
 }
 
 body {
@@ -23,6 +24,7 @@ body {
     background-color: var(--background_pane);
     opacity: var(--opacity_pane);
     padding: 2% 0%;
+    margin-bottom: 5%;
     justify-items: center;
     align-items: center;
 }
@@ -39,13 +41,18 @@ body {
     font-weight: bold;
 }
 
-.patient_status {
+.statistics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
     font-size: 2rem;
+    color: var(--content_color);
 }
 
-.content {
-    padding: 15%;
-    background: white;
+.patient_status, .remaining_guesses {
+    background-color: var(--background_pane);
+    opacity: var(--opacity_pane);
+    padding: 5%;
 }
 
 #word {
@@ -55,7 +62,7 @@ body {
 
 #start {
     margin-top: 5%;
-
+    
 }
 
 .word_class {

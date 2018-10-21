@@ -17,13 +17,17 @@
             <h1 class="game_title">Transfusion Word Guess</h1>
             <img class="ekg_image" src="assets/images/EKG.png" alt="EKG image">
             </header>
-            <div class="patient_status">
-                <p id="correct">Patients Saved: 0</p>
-                <p id="incorrect">Patients Lost: 0</p>
-                <p id="remaining">Guesses Remaining:</p>
+            <div class="statistics">
+                <div class="patient_status">
+                    <p id="correct">Patients Saved: 0</p>
+                    <p id="incorrect">Patients Lost: 0</p>
+                </div>
+                <div class="remaining_guesses">
+                    <p id="remaining">Guesses Remaining:</p>
+                </div>
+            </div>
                 <div id="word"></div>
                 <div id="guessedLetters"></div>
-            </div>
             <button type = "button" id = "start">Start</button>
     </div>
 </body>
