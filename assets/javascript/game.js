@@ -2,11 +2,12 @@
 let correct = 0;
 let incorrect = 0;
 let words1 = ["transfusion", 
-    "plasma", 
-    "antibody", 
-    "antigen",
-    "platelets",
-    "titer"];
+    // "plasma", 
+    // "antibody", 
+    // "antigen",
+    // "platelets",
+    // "titer"
+];
 
 let words2 = [];
 let word = document.getElementById("word");
