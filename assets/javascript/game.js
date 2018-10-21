@@ -11,8 +11,9 @@ let words1 = ["transfusion",
 let words2 = [];
 let word = document.getElementById("word");
 let letters = [];
+let chosenWord = "";
 
-// This section of code handles the word setting, and the word evaluating.
+// This section deals the word setting, and the word evaluating.
 // I added all of the array switching stuff because I don't like when a random generator generates the same word over and over.
 
 document.getElementById("start").addEventListener("click", function() {
@@ -21,6 +22,7 @@ document.getElementById("start").addEventListener("click", function() {
         words2 = [];
     };
     let wordChoice = Math.floor(Math.random() * words1.length);
+    chosenWord = words1[wordChoice];
     wordSplit(words1, wordChoice);
 });
 
@@ -32,8 +34,6 @@ function wordSplit(wordArray, choice){
     if(words1 !== -1) {
         words2.push(words1[choice]);
         words1.splice(choice, 1);
-        console.log(words1);
-        console.log(words2);
     };
 }
 
@@ -52,6 +52,7 @@ function wordSet(creativeWord) {
 
 document.addEventListener("keydown", function() {
     wordCheck(event.key.toLowerCase());
+    winCheck();
 });
 
 
@@ -72,4 +73,14 @@ function guessedLetters(press) {
     guessedPar.setAttribute("id", "guessed" + press);
     guessedDiv.appendChild(guessedPar);
     document.getElementById("guessed" + press).textContent = press;
+};
+
+// This section deals with wins
+
+function winCheck() {
+    let guessedWord = document.getElementById("word").textContent;
+    var correctGuess = 0;
+    if(guessedWord === chosenWord) {
+        document.getElementById("correct").innerHTML = "Patients Saved: " + ++correctGuess;
+    }
 };
