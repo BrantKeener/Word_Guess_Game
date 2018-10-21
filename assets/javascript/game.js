@@ -63,6 +63,7 @@ function wordSet(creativeWord) {
 document.addEventListener("keydown", function() {
     wordCheck(event.key.toLowerCase());
     winCheck();
+    guessRemaining();
 });
 
 
@@ -114,3 +115,19 @@ function wrongGuess(press) {
 
 // This section handles the loss situation that occurs after you run out of guesses
 
+function guessRemaining() {
+    if(chances === 0) {
+        loss();
+    };
+};
+
+function loss() {
+    ++incorrect;
+    document.getElementById("incorrect").textContent = "Patients Lost: " + incorrect;
+    setTimeout(lossMessage, 100);
+}
+
+function lossMessage() {
+    alert("Nope!")
+    roundStart();
+};
