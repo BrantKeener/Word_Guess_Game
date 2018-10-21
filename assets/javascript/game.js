@@ -121,8 +121,11 @@ function winMessage() {
 function wrongGuess(press) {
     var wrongLetters = document.getElementById("guessedLetters").textContent;
     if(!wrongLetters.includes(press)) {
+        console.log(chances);
+        console.log("blood" + chances);
+        var bloodDrops = document.getElementById("blood" + chances);
+        bloodDrops.style.display = "hide";
         --chances;
-        document.getElementById("remaining").textContent = "Guesses Remaining: " + chances;
     };
 };
 

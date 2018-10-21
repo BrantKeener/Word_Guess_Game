@@ -2,8 +2,7 @@
 html {
     --title_family: 'Londrina Outline', cursive;
     --title_color: #2db300;
-    --background_pane: black;
-    --opacity_pane: .75;
+    --background_pane: rgba(0,0,0,0.5);
     --content_color: white;
 }
 
@@ -14,15 +13,15 @@ body {
 
 .background {
     background-image: url("../images/Surgical_Suite.jpg");
+    background-position: bottom;
     background-size: cover;
-    padding: 5% 15% 9%;
+    padding: 5% 15% 9.7%;
 }
 
 .content_title {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     background-color: var(--background_pane);
-    opacity: var(--opacity_pane);
     padding: 2% 0%;
     margin-bottom: 1%;
     justify-items: center;
@@ -51,7 +50,6 @@ body {
 
 .patient_status, .remaining_guesses {
     background-color: var(--background_pane);
-    opacity: var(--opacity_pane);
     padding: 5%;
     margin-bottom: 1.5%;
 }
@@ -66,7 +64,6 @@ body {
 
 #word, #guessedLetters {
     background-color: var(--background_pane);
-    opacity: var(--opacity_pane);
     padding: 10%;
 }
 
@@ -82,4 +79,9 @@ body {
 .word_class {
     display: inline;
     font-size: 3rem;
+}
+
+.blood_drop {
+    height: auto;
+    width: 5%;
 }
