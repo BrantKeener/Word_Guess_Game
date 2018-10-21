@@ -4,14 +4,32 @@ body {
 }
 
 .background {
-    background-image: url("/assets/images/Surgical_Suite.jpg");
+    background-image: url("../images/Surgical_Suite.jpg");
     background-size: cover;
-    height: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.patient_status {
+    font-size: 2rem;
+}
+
+.content {
+    padding: 15%;
 }
 
 #word {
     display: inline;
+    padding: 5% 0% 5% 0%;
+    margin: 5%;
 }
+
+#start {
+    margin: 5%;
+}
+
 .word_class {
     display: inline;
     font-size: 3rem;
