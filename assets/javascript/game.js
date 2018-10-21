@@ -18,6 +18,8 @@ let chances = 6;
 // This section handles start button click.
 
 document.getElementById("start").addEventListener("click", function() {
+    var startButton = document.getElementById("start");
+    startButton.style.display = "none";
     roundStart();
 });
 
