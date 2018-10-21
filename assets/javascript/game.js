@@ -46,7 +46,10 @@ function roundStart(){
     guessedWord = "";
     chosenWord = "";
     chances = 6;
-    document.getElementById("remaining").textContent = "Guesses Remaining: " + chances;
+    for(let i = 1; i < chances + 1; i++) {
+        document.getElementById("blood" + i).style.visibility = "visible";
+    };
+
     if(!words1.length) {
         words1 = words2;
         words2 = [];
@@ -121,10 +124,9 @@ function winMessage() {
 function wrongGuess(press) {
     var wrongLetters = document.getElementById("guessedLetters").textContent;
     if(!wrongLetters.includes(press)) {
-        console.log(chances);
-        console.log("blood" + chances);
-        var bloodDrops = document.getElementById("blood" + chances);
-        bloodDrops.style.display = "hide";
+        var dropChanger = document.getElementById("blood" + chances);
+        dropChanger.style.visibility = "hidden";
+        console.log(dropChanger);
         --chances;
     };
 };
