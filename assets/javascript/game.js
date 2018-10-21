@@ -127,7 +127,7 @@ function winCheck() {
 };
 
 function winMessage() {
-    alert("Yep!")
+    alert("Great work doctor, this patient will live!")
     roundStart();
 };
 
@@ -158,6 +158,6 @@ function loss() {
 }
 
 function lossMessage() {
-    alert("Nope!")
+    alert("The word was " + chosenWord);
     roundStart();
 };
